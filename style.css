@@ -1,11 +1,6 @@
-:root{
-  
+:root{ 
     --primary:rgba(255, 253, 182, 0.802);
-    --secondary:orange;
-    --text_color:rgb(255, 255, 252);
-  
-    
-    
+    --text_color:rgb(255, 255, 252);   
   }
   
   *{
@@ -14,7 +9,7 @@
     box-sizing: border-box;
   }
   
-  /*title bar*/
+ 
   body{
     background-image: url('Assets/bg.jpg');
     background-repeat: no-repeat;
@@ -30,12 +25,20 @@
   
   .title{
    color:var(--primary);
-   text-shadow: yellow;
+   text-shadow: 2px 2px 4px rgba(161, 161, 68, 0.5);
    font-family: 'Archivo', sans-serif;
-   font-size: 3rem;
+   font-size: 4rem;
    text-align: center;
    margin-top: 1rem;
   }
+
+  .subtitle{
+    color:white;
+    text-shadow: yellow;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+   }
 
   .main{
     display: flex;
@@ -43,7 +46,7 @@
     background-color: white;
     opacity: 50%;
     width: 50%;
-    height: 400px;
+    height: 300px;
     margin: auto;
     margin-top: 4rem;
     align-items: center;
@@ -52,17 +55,42 @@
   }
 
   .content{
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-overflow: none;
+    padding: 2px;
+    text-align: center;
+  }
+
+  .buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 
   button{
-    background-color: var(--primary);
-    color:var(--text_color);
+    background-color: grey;
+    color:white;
+    padding: 2px;
+    margin: 2px;
+    width: 80;
   }
   button:hover{
-   background-color: var(--secondary);
+   background-color: rgb(86, 84, 84);
   }
   button#mapButton {
     margin-top: 1rem;
   }
+
+  .dest {
+    height: 40px; 
+    width: 300px; 
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .start, #mapButton {
+    margin: 10px;
+    padding: 10px 20px;
+  }
+
+  

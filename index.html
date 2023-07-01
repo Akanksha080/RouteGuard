@@ -11,16 +11,21 @@
     <title>RouteGuard</title>
 </head>
 <body>
-    <h1 class="title">RouteGuard</h1>   
+    <h1 class="title">RouteGuard</h1> 
+    <h2 class="subtitle">Your personal guardian on the road!</h2>  
     <main class="main">
        <span class="content">
-          <h2>Welcome!</h2>
+          <h3>Welcome!</h3>
           Let us guide and protect you as you embark on our journey.
-          Know that we have got you covered every step of the way and travel carefree!
+          Know that we have got you covered every step of the way and travel carefree.
        </span>
-       <label>Enter your destination</label>
-       <input type="text" name="dest" >
+       <br>
+       <br>
+       <input type="text" name="dest" class="dest" placeholder="Enter your destination">
+    <div class="buttons">
+       <button class="start">Start</button>
        <button id="mapButton">Show Map</button>
+    </div>
     </main>
     <script src="leaflet.js"></script>
     <script src="script.js"></script>
