@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100&family=Bacasime+Antique&family=Fasthand&display=swap" rel="stylesheet">
-    <title>RouteGuard</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RouteGuard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100&family=Bacasime+Antique&family=Fasthand&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1 class="title">RouteGuard</h1> 
-    <h2 class="subtitle">Your personal guardian on the road!</h2>  
-    <main class="main">
-       <span class="content">
-          <h3>Welcome!</h3>
-          Let us guide and protect you as you embark on our journey.
-          Know that we have got you covered every step of the way and travel carefree.
-       </span>
-       <br>
-       <br>
-       <input type="text" name="dest" class="dest" placeholder="Enter your destination">
+  <h1 class="title">RouteGuard</h1> 
+  <h2 class="subtitle">Your personal guardian on the road!</h2>  
+  <main class="main">
+    <span class="content">
+      <h3>Welcome!</h3>
+      Let us guide and protect you as you embark on our journey.
+      Know that we have got you covered every step of the way and travel carefree.
+    </span>
+    <br>
+    <br>
+    <input type="text" name="dest" class="dest" placeholder="Enter your destination">
     <div class="buttons">
-       <button class="start">Start</button>
-       <button id="mapButton">Show Map</button>
+      <button class="start">Start</button>
+      <button id="mapButton" onclick="showMap()">Show Map</button>
     </div>
-    </main>
-    <script src="leaflet.js"></script>
-    <script src="script.js"></script>
+  </main>
+  <script src="leaflet.js"></script>
+  <script src="script.js"></script>
+  <script>
+    function showMap() {
+      window.open('map.html', '_blank');
+    }
+  </script>
 </body>
 </html>
