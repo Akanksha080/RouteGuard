@@ -19,17 +19,44 @@
   </style>
 </head>
 <body>
+  <!-- Your HTML body content -->
+
   <div id="map"></div>
 
-  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
-  <script>
-    var map = L.map('map').setView([51.505, -0.09], 13);
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+  var map = L.map('map').setView([51.505, -0.09], 13);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
 
-    L.marker([51.5, -0.09]).addTo(map);
-  </script>
+  // Function to update the marker position on the map
+  function updateMarkerPosition(latitude, longitude) {
+    if (typeof marker !== 'undefined') {
+      map.removeLayer(marker); // Remove previous marker if it exists
+    }
+    marker = L.marker([latitude, longitude]).addTo(map);
+  }
+
+  // Check if geolocation is supported by the browser
+  if ('geolocation' in navigator) {
+    // Request geolocation permission
+    navigator.geolocation.getCurrentPosition(
+      function(position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        updateMarkerPosition(latitude, longitude);
+        map.setView([latitude, longitude], 13);
+      },
+      function(error) {
+        console.error('Error:', error.message);
+      }
+    );
+  } else {
+    console.error('Geolocation is not supported in this browser');
+  }
+</script>
+
 </body>
 </html>
