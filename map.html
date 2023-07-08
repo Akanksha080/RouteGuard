@@ -3,60 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Map Example</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
+  <title>Route Map</title>
   <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
-
     #map {
-      height: 100%;
+      height: 900px;
       width: 100%;
     }
   </style>
 </head>
 <body>
-  <!-- Your HTML body content -->
-
+  
   <div id="map"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
-<script>
-  var map = L.map('map').setView([51.505, -0.09], 13);
+  <script>
+    function initMap() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const source = urlParams.get('source');
+      const destination = urlParams.get('destination');
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
+      if (source && destination) {
+        const directionsService = new google.maps.DirectionsService();
+        const directionsRenderer = new google.maps.DirectionsRenderer({
+          map: new google.maps.Map(document.getElementById('map'), {
+            zoom: 10,
+            center: { lat: 0, lng: 0 }
+          })
+        });
 
-  // Function to update the marker position on the map
-  function updateMarkerPosition(latitude, longitude) {
-    if (typeof marker !== 'undefined') {
-      map.removeLayer(marker); // Remove previous marker if it exists
-    }
-    marker = L.marker([latitude, longitude]).addTo(map);
-  }
+        const request = {
+          origin: source,
+          destination: destination,
+          travelMode: google.maps.TravelMode.DRIVING
+        };
 
-  // Check if geolocation is supported by the browser
-  if ('geolocation' in navigator) {
-    // Request geolocation permission
-    navigator.geolocation.getCurrentPosition(
-      function(position) {
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
-        updateMarkerPosition(latitude, longitude);
-        map.setView([latitude, longitude], 13);
-      },
-      function(error) {
-        console.error('Error:', error.message);
+        directionsService.route(request, function(result, status) {
+          if (status === google.maps.DirectionsStatus.OK) {
+            directionsRenderer.setDirections(result);
+          } else {
+            console.error('Error:', status);
+          }
+        });
+      } else {
+        console.error('Source or destination not provided');
       }
-    );
-  } else {
-    console.error('Geolocation is not supported in this browser');
-  }
-</script>
+    }
 
+    initMap();
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHbVt9OEbf0W7AGYNfS1ZOZGOzBGztb28&callback=initMap" async defer></script>
 </body>
 </html>

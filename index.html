@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100&family=Bacasime+Antique&family=Fasthand&display=swap" rel="stylesheet">
-  
 </head>
 <body>
   <h1 class="title">RouteGuard</h1> 
@@ -22,15 +21,23 @@
     </span>
     <br>
     <br>
-    <input type="text" name="dest" class="dest" id="dest" placeholder="Enter your destination">
-    
-    <div class="buttons">
-      <button class="start" id="start">Start</button>
-      <button id="mapButton" onclick="showMap()">Show Map</button>
-    </div>
+    <form onsubmit="return showMap()">
+      <input type="text" name="source" class="location" id="source" placeholder="Enter your source">
+      <input type="text" name="destination" class="location" id="destination" placeholder="Enter your destination">
+      <button type="submit">Find Route</button>
+    </form>
   </main>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHbVt9OEbf0W7AGYNfS1ZOZGOzBGztb28&libraries=places&callback=initMap" async defer></script>
+  <script src="script.js"></script>
   <script src="dest.js"></script>
-  <script src="leaflet.js"></script>
+  <script>
+    function showMap() {
+      const source = document.getElementById('source').value;
+      const destination = document.getElementById('destination').value;
+      const url = `map.html?source=${encodeURIComponent(source)}&destination=${encodeURIComponent(destination)}`;
+      window.open(url, '_blank');
+      return false; // Prevent form submission
+    }
+  </script>
 </body>
 </html>
