@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100&family=Bacasime+Antique&family=Fasthand&display=swap" rel="stylesheet">
+  
 </head>
 <body>
   <h1 class="title">RouteGuard</h1> 
@@ -21,18 +22,15 @@
     </span>
     <br>
     <br>
-    <input type="text" name="dest" class="dest" placeholder="Enter your destination">
+    <input type="text" name="dest" class="dest" id="dest" placeholder="Enter your destination">
+    
     <div class="buttons">
       <button class="start" id="start">Start</button>
       <button id="mapButton" onclick="showMap()">Show Map</button>
     </div>
   </main>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHbVt9OEbf0W7AGYNfS1ZOZGOzBGztb28&libraries=places&callback=initMap" async defer></script>
+  <script src="dest.js"></script>
   <script src="leaflet.js"></script>
-  <script src="script.js"></script>
-  <script>
-    function showMap() {
-      window.open('map.html', '_blank');
-    }
-  </script>
 </body>
 </html>
