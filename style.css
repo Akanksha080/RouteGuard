@@ -71,7 +71,15 @@ body{
   align-items: center;
 }
 
-button{
+.start{
+   background-color: grey;
+  color:white;
+  padding: 2px;
+  margin: 2px;
+  width: 80;
+}
+
+.buttons button{
   background-color: grey;
   color:white;
   padding: 2px;
@@ -107,7 +115,7 @@ button#mapButton {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 128, 0, 0.8); /* Green background color */
+  background-color: rgba(230, 20, 9, 0.5);
 }
 
 .modal-content {
@@ -125,7 +133,7 @@ button#mapButton {
 }
 
 button {
-  background-color: #4CAF50; /* Green background color for buttons */
+  background-color: red; /* Green background color for buttons */
   color: white;
   padding: 10px;
   margin: 5px;
