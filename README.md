@@ -23,13 +23,13 @@ RouteGuard is a powerful and intuitive web application that ensures your safety 
 To get started with RouteGuard, simply enter your source and destination locations in the designated input fields. Once you have entered the information, RouteGuard will utilize the power of the Google Maps API to calculate the optimal route between the two points.
 <br>
 
-<img src="Snapshots/HomePage.PNG" alt="home page" width="500" height="400">
+<img src="/Snapshots/HomePage.PNG" alt="home page" width="500" height="400">
 <br>
 
 The map will then display the route, highlighting the path you should follow. This visual representation not only helps you navigate efficiently but also ensures that you stay on track throughout your journey. 
  <br>
  
-<img src="Snapshots/mapView.PNG" alt="maps" width="500" height="400">
+<img src="/Snapshots/mapView.PNG" alt="maps" width="500" height="400">
 <br>
 With RouteGuard, you can have confidence in your route and enjoy a hassle-free travel experience.
 <br>
@@ -37,7 +37,7 @@ With RouteGuard, you can have confidence in your route and enjoy a hassle-free t
 RouteGuard not only helps you plan and navigate your route but also ensures your safety by providing off-route warnings. If you deviate from the planned route for more than 5 minutes, RouteGuard will alert you, keeping you informed and helping you make necessary adjustments. With this feature, you can confidently stay on track and reach your destination without any unwanted detours. Stay safe and enjoy a worry-free journey with RouteGuard!
 <br>
 
-<img src="Snapshots/warning.PNG" alt="maps" width="500" height="400">
+<img src="/Snapshots/warning.PNG" alt="maps" width="500" height="400">
 
 ## Getting Started
 
