@@ -1,100 +1,138 @@
 :root{ 
-    --primary:rgba(255, 253, 182, 0.802);
-    --text_color:rgb(255, 255, 252);   
-  }
-  
-  *{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-  }
-  
- 
-  body{
-    background-image: url('Assets/bg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
-  
-  .title{
-   color:var(--primary);
-   text-shadow: 2px 2px 4px rgba(161, 161, 68, 0.5);
-   font-family: 'Archivo', sans-serif;
-   font-size: 4rem;
-   text-align: center;
-   margin-top: 1rem;
-  }
+  --primary:rgba(255, 253, 182, 0.802);
+  --text_color:rgb(255, 255, 252);   
+}
 
-  .subtitle{
-    color:white;
-    text-shadow: yellow;
-    font-size: 2rem;
-    text-align: center;
-    margin-top: 1rem;
-   }
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
 
-  .main{
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    opacity: 50%;
-    width: 50%;
-    height: 300px;
-    margin: auto;
-    margin-top: 4rem;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2rem
-  }
 
-  .content{
-    font-size: 1.5rem;
-    text-overflow: none;
-    padding: 2px;
-    text-align: center;
-  }
+body{
+  background-image: url('Assets/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
 
-  .location{
-    margin-top: 10px;
-  }
 
-  .buttons{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
+.title{
+ color:var(--primary);
+ text-shadow: 2px 2px 4px rgba(161, 161, 68, 0.5);
+ font-family: 'Archivo', sans-serif;
+ font-size: 4rem;
+ text-align: center;
+ margin-top: 1rem;
+}
 
-  button{
-    background-color: grey;
-    color:white;
-    padding: 2px;
-    margin: 2px;
-    width: 80;
-  }
-  button:hover{
-   background-color: rgb(86, 84, 84);
-  }
-  button#mapButton {
-    margin-top: 1rem;
-  }
+.subtitle{
+  color:white;
+  text-shadow: yellow;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 1rem;
+ }
 
-  .dest {
-    height: 40px; 
-    width: 300px; 
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
-  .start, #mapButton {
-    margin: 10px;
-    padding: 10px 20px;
-  }
+.main{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  opacity: 50%;
+  width: 50%;
+  height: 300px;
+  margin: auto;
+  margin-top: 4rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem
+}
 
-  
+.content{
+  font-size: 1.5rem;
+  text-overflow: none;
+  padding: 2px;
+  text-align: center;
+}
+
+.location{
+  margin-top: 10px;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+button{
+  background-color: grey;
+  color:white;
+  padding: 2px;
+  margin: 2px;
+  width: 80;
+}
+button:hover{
+ background-color: rgb(86, 84, 84);
+}
+button#mapButton {
+  margin-top: 1rem;
+}
+
+.dest {
+  height: 40px; 
+  width: 300px; 
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.start, #mapButton {
+  margin: 10px;
+  padding: 10px 20px;
+}
+
+/* Modal Styles */
+.modal {
+  display: none; /* Hide the modal by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 128, 0, 0.8); /* Green background color */
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  background-color: #4CAF50; /* Green background color for buttons */
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
