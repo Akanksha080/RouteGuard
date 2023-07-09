@@ -81,7 +81,7 @@ function panicButton() {
 }
 
 function falseAlarm() {
-  alert('You triggered a false alarm.');
+  alert('Apologies for the confusion! ');
   const modal = document.getElementById('myModal');
   modal.style.display = 'none';
 }
